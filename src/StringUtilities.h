@@ -18,7 +18,7 @@
 // Author: Dale E. Martin          dmartin@cliftonlabs.com
 
 #include <string>
-#include <strstream>
+#include <sstream>
 
 using std::string;
 

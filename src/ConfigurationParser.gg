@@ -100,7 +100,7 @@ public:
   }
 
   static const ConfigurationScope *
-  ConfigurationParserHandle::parseFile( string fileName );
+  parseFile( string fileName );
 >>
 
 configurationFile > [ const ConfigurationScope *outerScope ]:

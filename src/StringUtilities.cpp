@@ -16,11 +16,15 @@
 // Authors: Dale E. Martin   dmartin@cliftonlabs.com
 
 #include "StringUtilities.h"
-#include <string.h>
-#include <strstream>
-using std::ostrstream;
-using std::istrstream;
+#include <string>
+#include <cstring>
+#include <sstream>
+#include <iostream>
+#include <string>
+
 using std::ends;
+using std::string;
+using std::stringstream;
 
 /* This is here solely to make something we can check for from configure. */
 extern "C" {
@@ -46,30 +50,31 @@ const string trimWhiteSpaces( const string &inputString ){
 
 const string intToString( int input ){
   string retval;
-  ostrstream stream;
+  stringstream stream;
   stream << input << ends;
-  char *asChar = stream.str();
-  retval = asChar;
-  stream.rdbuf()->freeze(0);
-  return retval;
+  return stream.str();
 }
 
 int stringToInt( const string &input ){
-  int retval = -1;
-
-  istrstream is( input.c_str() );
-  is >> retval;
-  
-  return retval;
+  try
+  {
+    return stoi(input);
+  }
+  catch (int e)
+  {
+    return -1;
+  }
 }
 
 double stringToDouble( const string &input ){
-  double retval = 0.0;
-
-  istrstream is( input.c_str() );
-  is >> retval;
-  
-  return retval;
+  try
+  {
+    return stod(input);
+  }
+  catch (int e)
+  {
+    return 0.0;
+  }
 }
 
 bool stringCaseCompare( const string &s1, const string &s2 ){

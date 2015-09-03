@@ -20,15 +20,20 @@
 #include <sys/stat.h>
 #include <dirent.h>
 #include <unistd.h>
-#include <iostream.h>
-#include <fstream.h>
-#include <strstream.h>
+#include <iostream>
+#include <fstream>
+#include <sstream>
 #include <errno.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <assert.h>
 #include <string.h>
+
+using std::cerr;
+using std::endl;
+using std::ifstream;
+using std::ios_base;
 
 #define COMPARE_BUFFER_SIZE 2048
 
@@ -243,8 +248,8 @@ PosixFileManager::fileCompare( const string &fileName1, const string &fileName2 
   char *compare_buffer1;
   char *compare_buffer2;
   
-  file1.open( fileName1.c_str(), ios::in );
-  file2.open( fileName2.c_str(), ios::in );
+  file1.open( fileName1.c_str(), ios_base::in );
+  file2.open( fileName2.c_str(), ios_base::in );
 
   if (file2.good() == 0) {
     // Okay. The original file does not exists. Can't compare
@@ -252,13 +257,13 @@ PosixFileManager::fileCompare( const string &fileName1, const string &fileName2 
     return 256;
   }
   
-  file1.seekg(0, ios::end);
+  file1.seekg(0, ios_base::end);
   fileSize1 = file1.tellg();
-  file1.seekg(0, ios::beg);
+  file1.seekg(0, ios_base::beg);
   
-  file2.seekg(0, ios::end);
+  file2.seekg(0, ios_base::end);
   fileSize2 = file2.tellg();
-  file2.seekg(0, ios::beg);
+  file2.seekg(0, ios_base::beg);
   
   if (fileSize1 == fileSize2) {
     // Compare the files only if they are of the same size.

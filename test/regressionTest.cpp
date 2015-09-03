@@ -15,10 +15,13 @@
 
 // Authors: Dale E. Martin   dmartin@cliftonlabs.com
 
-#include <iostream.h>
+#include <iostream>
 #include "FileManagerTest.h"
 #include "ModuleManagerTest.h"
 #include "ConfigurationParserTest.h"
+
+using std::cerr;
+using std::endl;
 
 bool oneFailed = false;
 

@@ -20,33 +20,25 @@
 
 #include "clutils-config.h"
 
-#ifdef HAVE_HASH_MAP
-#include <hash_map>
-#else
-#ifdef HAVE_EXT_HASH_MAP
-#include <ext/hash_map>
-#else
-#error "Couldn't find #include<hash_map> or #include<ext/hash_map>"
-#endif
-#endif
-
 #include "StringUtilities.h"
 
+#include <unordered_map>
 #include <string>
+#include <cstring>
 #include <vector>
 
-using std::hash_map;
+using std::unordered_map;
 using std::string;
 using std::vector;
 
 class hashString {
 public:
-  size_t operator()( const string &s ) const;
+  size_t operator()( const std::string &s ) const;
 };
 
 class hashEqual {
 public:
-  bool operator()( const string &s1, const string &s2 ) const;
+  bool operator()( const std::string &s1, const std::string &s2 ) const;
 };
 
 
@@ -56,10 +48,10 @@ public:
   StringHashMap(){}
   ~StringHashMap(){}
   
-  toHash find( const string &key ) const {
+  toHash find( const std::string &key ) const {
     toHash retval = 0;
 
-    hash_map<string, toHash, hashString, hashEqual>::const_iterator found =
+    typename std::unordered_map<std::string, toHash, hashString, hashEqual>::const_iterator found =
       myHashMap.find( key );
   
     if( found != myHashMap.end() ){
@@ -69,14 +61,14 @@ public:
     return retval;
   }
 
-  void insert( const string &key, toHash value ){
+  void insert( const std::string &key, toHash value ){
     myHashMap[ key ] = value;
   }
 
 
   const vector<toHash> *toVector() const {
     vector<toHash> *retval = new vector<toHash>();
-    for( hash_map<string, toHash, hashString, hashEqual>::const_iterator i = myHashMap.begin();
+    for( typename std::unordered_map<std::string, toHash, hashString, hashEqual>::const_iterator i = myHashMap.begin();
 	 i != myHashMap.end();
 	 i++ ){
       retval->push_back( (*i).second );
@@ -86,7 +78,7 @@ public:
   }
 
 private:
-    hash_map<string, toHash, hashString, hashEqual> myHashMap;
+    std::unordered_map<std::string, toHash, hashString, hashEqual> myHashMap;
 };
 #endif
 

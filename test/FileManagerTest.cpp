@@ -21,6 +21,7 @@
 #include "StringUtilities.h"
 #include <fstream>
 #include <stdio.h>
+#include <cassert>
 
 using std::endl;
 using std::ofstream;

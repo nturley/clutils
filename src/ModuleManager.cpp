@@ -18,10 +18,13 @@
 #include "ModuleManager.h"
 #include "ModuleBase.h"
 #include "FileManager.h"
-#include <strstream.h>
+#include <sstream>
 #include <assert.h>
-#include <iostream.h>
+#include <iostream>
 #include <ltdl.h>
+
+using std::cerr;
+using std::endl;
 
 ModuleManager * 
 ModuleManager::instance(){

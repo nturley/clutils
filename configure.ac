@@ -3,8 +3,6 @@ AC_INIT([clutils],[0.0])
 AC_CONFIG_MACRO_DIR([m4])
 AM_SILENT_RULES([yes])
 AM_INIT_AUTOMAKE([1.14 foreign subdir-objects])
-AC_SUBST(PACKAGE, clutils)
-AC_SUBST(VERSION, 0.0)
 
 dnl AC_CONFIG_SUBDIRS(src)
 
@@ -44,6 +42,8 @@ dnl Checks for library functions.
 AC_FUNC_MEMCMP
 AC_TYPE_SIGNAL
 AC_CHECK_FUNCS(mkdir strdup)
+
+CXXFLAGS="$CXXFLAGS -std=c++11 -Wall"
 
 AM_CONFIG_HEADER(src/clutils-config.h)
 

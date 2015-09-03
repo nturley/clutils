@@ -20,7 +20,7 @@
 #include "ConfigurationParserTest.h"
 #include "ConfigurationParserHandle.h"
 #include "StringUtilities.h"
-#include <fstream.h>
+#include <fstream>
 #include <stdio.h>
 
 ConfigurationParserTest *

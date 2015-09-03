@@ -20,13 +20,13 @@
 using std::hash;
 
 size_t
-hashString::operator()( const string &s ) const {
+hashString::operator()( const std::string &s ) const {
   hash<const char *> H;
-  const string upper = upperCase(s);
+  const std::string upper = upperCase(s);
   return H( upper.c_str() );
 }
 
 bool 
-hashEqual::operator()( const string &s1, const string &s2 ) const{
+hashEqual::operator()( const std::string &s1, const std::string &s2 ) const{
   return stringCaseCompare(s1, s2);
 }

@@ -16,9 +16,9 @@
 // Authors: Dale E. Martin   dmartin@cliftonlabs.com
 
 #include "Debug.h"
-#include <iostream.h>
+#include <iostream>
 using std::ostream;
-
+using std::cout;
 
 EatEverythingBuf *
 EatEverythingBuf::instance(){
