@@ -1,6 +1,6 @@
 SUBDIRS= modules
 
-INCLUDES = -I$(top_srcdir)/src/pccts -I$(top_srcdir)/src
+AM_CPPFLAGS = -I$(top_srcdir)/src/pccts -I$(top_srcdir)/src
 
 bin_PROGRAMS = regressionTest
 

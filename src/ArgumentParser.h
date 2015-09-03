@@ -25,6 +25,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <cstring>
 #include <string>
 
 using std::string;
@@ -158,7 +159,7 @@ ostream &operator<<(ostream &os, ArgumentParser &ap){
       }
       
       // here is the help string.
-      os << ap.argRecordArray[i].argHelp << endl;
+      os << ap.argRecordArray[i].argHelp << std::endl;
       i++;
    }
    
@@ -170,7 +171,7 @@ ostream &operator<<(ostream &os, ArgumentParser &ap){
    for( j = 0; j < (int) (maxlen - strlen("-help")  + numSpaces) ; j++ ){
       os << " ";
    }
-   os << "print this message" << endl;
+   os << "print this message" << std::endl;
    
    return os;
 }

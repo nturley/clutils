@@ -1,6 +1,8 @@
 dnl Process this file with autoconf to produce a configure script.
-AC_INIT(src/ConfigurationChoice.cpp)
-AM_INIT_AUTOMAKE(clutils, 0.0)
+AC_INIT([clutils],[0.0])
+AC_CONFIG_MACRO_DIR([m4])
+AM_SILENT_RULES([yes])
+AM_INIT_AUTOMAKE([1.14 foreign subdir-objects])
 AC_SUBST(PACKAGE, clutils)
 AC_SUBST(VERSION, 0.0)
 
@@ -16,10 +18,10 @@ AC_PROG_LIBTOOL
 AC_PROG_CC
 AC_PROG_CPP
 AC_PROG_CXX
-AC_PROG_RANLIB
+AC_LIBTOOL_DLOPEN
+AC_PROG_LIBTOOL
 AC_PROG_INSTALL
 dnl AC_PATH_PROG(AR, ar, :)
-AC_PROG_PCCTS
 
 dnl Checks for header files.
 AC_HEADER_STDC

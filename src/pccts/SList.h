@@ -64,8 +64,8 @@ public:
 	virtual void add(void *e);
 	virtual void lfree();
 	virtual PCCTS_AST *to_ast(SList list);
-	virtual void require(int e,char *err){ if ( !e ) panic(err); }
-	virtual void panic(char *err){ /* MR23 */ printMessage(stderr, "SList panic: %s\n", err); exit(PCCTS_EXIT_FAILURE); }
+	virtual void require(int e,char const *err){ if ( !e ) panic(err); }
+	virtual void panic(char const *err){ /* MR23 */ printMessage(stderr, "SList panic: %s\n", err); exit(PCCTS_EXIT_FAILURE); }
 	virtual int printMessage(FILE* pFile, const char* pFormat, ...); // MR23
 };
 

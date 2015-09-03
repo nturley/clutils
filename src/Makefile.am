@@ -1,6 +1,6 @@
 lib_LTLIBRARIES = libclutils.la
 
-INCLUDES = -I$(top_srcdir)/src/pccts
+AM_CPPFLAGS = -I$(top_srcdir)/src/pccts
 
 EXTRA_DIST = \
 	ConfigurationParser.gg \
@@ -89,9 +89,9 @@ libclutils_la_SOURCES = \
 	StringHashMap.cpp \
 	StringUtilities.cpp
 
-DO_ANTLR= $(ANTLR) -k 1 -CC ConfigurationParser.gg
+DO_ANTLR= antlr -k 1 -CC ConfigurationParser.gg
 
-DO_DLG= $(DLG) -C2 -CC parser.dlg -cl ConfigurationLexer
+DO_DLG= dlg -C2 -CC parser.dlg -cl ConfigurationLexer
 
 parser.dlg: ConfigurationParser.gg
 	$(DO_ANTLR)

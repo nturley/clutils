@@ -44,7 +44,7 @@ ArgumentParser::getArgArray(ArgRecord ptr[]) {
 	  // If you got into this conditional, you probably forgot
 	  // to put "ArgumentParser::last_arg" in your array.  If not,
 	  // increase the number above and recompile
-	  cerr << "More than 100 arguments?\n";
+      std::cerr << "More than 100 arguments?\n";
 	  exit(-1);
 	}
       }
@@ -128,7 +128,7 @@ ArgumentParser::checkArgs(int &argc, char *argv[], bool caxoe) {
             break;
          }
          default:
-            cerr << "Invalid arg type in arg array!\n";
+            std::cerr << "Invalid arg type in arg array!\n";
             exit(-1);
          }
       
@@ -166,17 +166,17 @@ ArgumentParser::checkRemaining( int argc, char **argv,
    for(i = 0; i < argc; i++){
     
       if( strcmp(argv[i], "-help") == 0 ){
-         cout << "Valid arguments are:\n";
-         cout << *this << endl;
+         std::cout << "Valid arguments are:\n";
+         std::cout << *this << std::endl;
          exit( 0 );
       }
     
       if( argv[i][0] == '-' ){
          // Then someone passed in an illegal argument!
          if(  complainAndExitOnError == true) {
-            cerr << "Invalid argument \"" << argv[i] << "\"\n";
-            cerr << "Valid arguments: \n";
-            cerr << *this << endl;
+            std::cerr << "Invalid argument \"" << argv[i] << "\"\n";
+            std::cerr << "Valid arguments: \n";
+            std::cerr << *this << std::endl;
             exit( -1 );
          }
       }
