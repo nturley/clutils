@@ -19,13 +19,12 @@
 #include <iostream>
 #include <sstream>
 #include <cstdlib>
+
 using std::ostringstream;
 using std::istringstream;
 
 /* This is here solely to make something we can check for from configure. */
-extern "C" {
-  int isClutils(){ return 0; }
-}
+extern "C" int isClutils(){ return 0; }
 
 const string upperCase( const string &inputString ){
   string retval;

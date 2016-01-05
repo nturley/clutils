@@ -22,6 +22,9 @@
 
 using std::string;
 
+/* This is here solely to make something we can check for from configure. */
+extern "C" {int fake();}
+
 /** Uppercase the passed-in input string */
 const string upperCase( const string &inputString );
 

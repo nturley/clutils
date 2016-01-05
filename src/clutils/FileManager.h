@@ -20,7 +20,9 @@
 #include <sys/types.h>
 #include <vector>
 #include <string>
+#include <iostream>
 
+using std::ios;
 using std::string;
 using std::vector;
 
@@ -121,6 +123,8 @@ public:
   */
   virtual const vector<string> *getAllFiles( const string &regEx, 
 					     const string &dir ) const = 0;
+					     
+  virtual void open( std::fstream* stream, const string &fileName, std::ios::openmode mode ) const = 0;
 
   /**
      Compares files to see if they contain identical bytes.  

@@ -42,6 +42,11 @@ const string intToString( int input );
 int stringToInt( const string &input );
 
 /**
+   Return the double passed in as a string.
+*/
+const string doubleToString( double input );
+
+/**
    Take the string containing a floating point value, and return a float.
    Warning - no check is done to make sure that the string is really an
    float.  Undefined behavior will result in passing in a string that
@@ -54,5 +59,11 @@ double stringToDouble( const string &input );
 */
 bool stringCaseCompare( const string &s1, const string &s2 );
 
+/**
+   Take the string that represents an integer, and return an int.  The bool
+   passed in will be set to true if the conversion is successful, else it
+   will be false.
+*/
+long stringToLong( const string &input, int &endPos );
 
 #endif

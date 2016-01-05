@@ -65,7 +65,20 @@ public:
     myHashMap[ key ] = value;
   }
 
-
+  /**
+     Returns a vector full of the elements of this StringHashMap.
+     Note that it is allocated and return - caller must delete.
+  */
+  vector<toHash> *getElementVector() const {
+    vector<toHash> *retval = new vector<toHash>();
+    for( typename std::unordered_map<std::string, toHash, hashString, hashEqual>::const_iterator i = myHashMap.begin();
+	 i != myHashMap.end();
+	 i++ ){
+      retval->push_back( (*i).second );
+    }
+    return retval;
+  }
+  
   const vector<toHash> *toVector() const {
     vector<toHash> *retval = new vector<toHash>();
     for( typename std::unordered_map<std::string, toHash, hashString, hashEqual>::const_iterator i = myHashMap.begin();

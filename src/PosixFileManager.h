@@ -19,6 +19,11 @@
 
 #include <dirent.h>
 #include "FileManager.h"
+#include <fstream>
+#include <iostream>
+#include <string>
+
+using std::string;
 
 /**
    This is the posix implementation of the file manager interface.
@@ -53,6 +58,10 @@ public:
 
   const string getRealPath( const string &file_name ) const;
 
+  const string baseName( const string &pathToFile ) const;
+  
+  void open( std::fstream* stream, const string &fileName, std::ios::openmode mode ) const;
+  
   /**
      This method provides a singleton instance of the PosixFileManager.
      For portability, applications must call FileManager::instance as

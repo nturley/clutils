@@ -62,8 +62,14 @@ library_include_HEADERS = \
 	Debug.h \
 	ModuleBase.h  \
 	ModuleManager.h \
-	tokens.h
-
+	tokens.h \
+	clutils/Iterator.h \
+	clutils/PluginBase.h \
+	clutils/VarArgs.h \
+	clutils/PluginManager.h \
+	clutils/AllocatorStack.h \
+	clutils/VectorIterator.h
+	
 libclutils_la_SOURCES = \
 	pccts/AParser.cpp \
 	pccts/ASTBase.cpp \
@@ -87,7 +93,9 @@ libclutils_la_SOURCES = \
 	ModuleManager.cpp \
 	PosixFileManager.cpp \
 	StringHashMap.cpp \
-	StringUtilities.cpp
+	StringUtilities.cpp \
+	clutils/PluginBase.cpp \
+	clutils/PluginManager.cpp
 
 DO_ANTLR= antlr -k 1 -CC ConfigurationParser.gg
 

@@ -29,13 +29,26 @@
 #include <unistd.h>
 #include <assert.h>
 #include <string.h>
+#include <cstddef>
 
 using std::cerr;
 using std::endl;
 using std::ifstream;
 using std::ios_base;
+using std::ios;
 
 #define COMPARE_BUFFER_SIZE 2048
+
+void PosixFileManager::open( std::fstream* stream, const string &fileName, ios::openmode mode ) const{
+  stream->open(fileName, mode);
+  /* TODO: error handling */
+}
+
+const string
+PosixFileManager::baseName( const string &pathToFile ) const{
+	std::size_t found = pathToFile.find_last_of("/\\");
+	return pathToFile.substr(found+1);
+}
 
 FileManager::FileStatus
 PosixFileManager::checkFileStatus( const string &filename, FileType MODE ) const {

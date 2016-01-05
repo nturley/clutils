@@ -38,6 +38,11 @@ using std::ios;
 
 static const int COMPARE_BUFFER_SIZE = 2048;
 
+void PosixFileManager::open( const string &fileName, ios::openmode mode ) const{
+  stream->open(fileName, mode);
+  /* TODO: error handling */
+}
+
 FileManager::FileStatus
 PosixFileManager::checkFileStatus( const string &filename, FileType MODE ) const {
   struct stat file_stat;

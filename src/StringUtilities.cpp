@@ -26,9 +26,16 @@ using std::ends;
 using std::string;
 using std::stringstream;
 
-/* This is here solely to make something we can check for from configure. */
 extern "C" {
-  int fake(){ return 0; }
+    int fake(void) {
+        return 0;
+    }
+}
+
+const string doubleToString( double input ){
+  stringstream stream;
+  stream << input;
+  return stream.str();
 }
 
 const string upperCase( const string &inputString ){
@@ -79,5 +86,16 @@ double stringToDouble( const string &input ){
 
 bool stringCaseCompare( const string &s1, const string &s2 ){
   bool retval = (upperCase( s1 ) == upperCase( s2 ));
+  return retval;
+}
+
+long
+stringToLong( const string &input, int &endPos ){
+  long retval = -1;
+
+  char *endPtr = 0;
+  retval = strtol( input.c_str(), &endPtr, 10 );
+  endPos = endPtr - input.c_str();
+  
   return retval;
 }

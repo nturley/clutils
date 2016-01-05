@@ -43,6 +43,7 @@ AC_FUNC_MEMCMP
 AC_TYPE_SIGNAL
 AC_CHECK_FUNCS(mkdir strdup)
 
+LDFLAGS="$LDFLAGS -ldl -lltdl"	
 CXXFLAGS="$CXXFLAGS -std=c++11 -Wall"
 
 AM_CONFIG_HEADER(src/clutils-config.h)

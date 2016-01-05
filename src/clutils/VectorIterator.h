@@ -16,7 +16,7 @@
 
 // Author: Dale E. Martin          dmartin@cliftonlabs.com
 
-#include <clutils/Iterator.h>
+#include <Iterator.h>
 #include <vector>
 using std::vector;
 

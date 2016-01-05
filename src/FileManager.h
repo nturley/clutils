@@ -17,14 +17,15 @@
 
 // Author: Dale E. Martin          dmartin@cliftonlabs.com
 
-class list;
 
 #include <sys/types.h>
 #include <vector>
 #include <string>
+#include <fstream>
 
 using std::string;
 using std::vector;
+using std::ios;
 
 /**
    This class defines an interface for generic file access.  The intent
@@ -78,6 +79,8 @@ public:
   virtual FileStatus makeDirectory( const string &directoryName, 
 				    mode_t mode = 0755 ) const = 0;
   
+  virtual void open( std::fstream* stream, const string &fileName, std::ios::openmode mode ) const = 0;
+		      
   /**
      Remove the named directory.
      @param directoryName The name of the directory to remove.
@@ -147,6 +150,11 @@ public:
   */
   virtual const string getRealPath( const string &file_name ) const = 0;
 
+  /**
+     Takes a path and returns just the filename part of it.
+  */
+  virtual const string baseName( const string &pathToFile ) const = 0;
+  
   /**
      This method should be called to get a singleton instance of this
      class.  Only one implementation should ever be compiled into the
