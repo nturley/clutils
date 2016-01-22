@@ -49,7 +49,7 @@ library_include_HEADERS = \
 	pccts/pccts_stdlib.h \
 	pccts/pccts_string.h \
 	clutils-config.h \
-	ArgumentParser.h \
+	clutils/ArgumentParser.h \
 	ConfigurationParserHandle.h \
 	ConfigurationScope.h \
 	ConfigurationValue.h \
@@ -79,7 +79,7 @@ libclutils_la_SOURCES = \
 	pccts/PCCTSAST.cpp \
 	pccts/PCCTSAST.h \
 	pccts/slist.cpp \
-	ArgumentParser.cpp \
+	clutils/ArgumentParser.cpp \
 	ConfigurationLexer.cpp \
 	parser.dlg \
 	ConfigurationParserHandle.cpp \

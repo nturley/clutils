@@ -56,10 +56,7 @@ const string trimWhiteSpaces( const string &inputString ){
 }
 
 const string intToString( int input ){
-  string retval;
-  stringstream stream;
-  stream << input << ends;
-  return stream.str();
+  return std::to_string(input);
 }
 
 int stringToInt( const string &input ){
