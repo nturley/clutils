@@ -6,6 +6,6 @@ addons:
     packages:
     - dh-autoreconf
     - automake
-    - pccts
 before_install:
+  - sudo apt-get install pccts
   - dh_autoreconf
