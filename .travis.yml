@@ -7,5 +7,5 @@ addons:
     - dh-autoreconf
     - automake
 before_install:
-  - sudo apt-get install pccts
+  - sudo apt-get install pccts -y
   - dh_autoreconf
