@@ -3,5 +3,6 @@ addons:
   apt:
     packages:
     - dh-autoreconf
+    - automake
 before_install:
   - dh_autoreconf
