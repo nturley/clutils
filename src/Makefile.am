@@ -33,7 +33,6 @@ library_include_HEADERS = \
 	pccts/DLexer.h \
 	pccts/DLexerBase.h \
 	pccts/PBlackBox.h \
-	pccts/Set.h \
 	pccts/SList.h \
 	pccts/antlr.h \
 	pccts/ast.h \
