@@ -1,1 +1,7 @@
 language: cpp
+addons:
+  apt:
+    packages:
+    - dh-autoreconf
+before_install:
+  - dh_autoreconf
