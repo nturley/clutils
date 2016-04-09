@@ -6,6 +6,6 @@ addons:
     packages:
     - dh-autoreconf
     - automake
-    - antlr
+    - pccts
 before_install:
   - dh_autoreconf
