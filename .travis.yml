@@ -13,6 +13,7 @@ before_deploy:
 - sudo make install
 - mkdir export
 - mkdir export/lib
+- mkdir export/include 
 - cp /usr/local/lib/*clutils* export/lib -v
 - cp /usr/local/include/clutils-0.0 export/include -rv
 deploy:
