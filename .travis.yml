@@ -7,5 +7,8 @@ addons:
     - dh-autoreconf
     - automake
 before_install:
-  - sudo apt-get install pccts -y
-  - dh_autoreconf
+- sudo apt-get install pccts -y
+- dh_autoreconf
+env:
+  global:
+    secure: X3GfYQstMHfoYxQvOgdFCsGOtsXTdIl+/MCuq2LQnlIRrsXe3a/410xEPtgfyPzJ54sDK+HoFcqi1Pfx8hunYPDontsYqatC0acZmSbFKN0qUvjEkf1A6XlGODUv+EsDAPNAW5YQ53LqenYeK/yqG9aKqLM5vutu8QzOXQGCAo0W4atXjN2vCey1TLZwZzeL4ePkMhc7/tLJo/2RIZuN9/nD1MHpm9W8UGtBRbAR7ZDk8aWi+gtbZ7opvjtONNEih24DQAP08XuPQ7AI1wlBT6mzvgkqdPqoUu5IjaLdsdtFFOpaHiTizei+GFnH1n6CUXpKLmFC8eI4OYy7vo+tb/KeWl/LLbaOgDiSV/TQwbjWF1yYmdVxkO28j1WUEH0TvR2udMSAXCULcgLOwq7sHxJtCfoXp91fba00MhF6iZDKKz3mKwPUJBfhjv/sZlW1kJjuZ5g+Gm1HxUKDm7mqEQGvGr60F/8KrPA+cS/f1mqoXvyNbGqM34rSs0kjN1fKXMqI9virzvSfOPynqOhwPAzmo0NTlidmLhOvlSVFkcxvT2ht6qNRfEHihQJcK/s1noWkrV615WkUBIKZE6xuUn0AJ577a9uvUkSc2xwSxXXS7DUy7EbgGbo/LA0eizADF0R9uoknO/LfSSwcYPixwMe1UGJ8Xpn2PQ04j8ELbZM=
