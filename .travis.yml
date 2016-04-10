@@ -6,6 +6,7 @@ addons:
     packages:
     - dh-autoreconf
     - automake
+    - doxygen
 before_install:
 - sudo apt-get install pccts -y
 - dh_autoreconf
