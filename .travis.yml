@@ -18,7 +18,7 @@ before_deploy:
 - mkdir export/include
 - mkdir deploy
 - mkdir deploy/clutils-dox
-- cp documentation/html/ deploy/clutils-dox/ -r
+- cp documentation/html/. deploy/clutils-dox/ -rv
 - cp /usr/local/lib/*clutils* export/lib -v
 - cp /usr/local/include/clutils-* export/include -rv
 - tar -zcvf deploy/clutils.tar.gz export
