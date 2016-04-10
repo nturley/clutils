@@ -14,7 +14,7 @@ before_deploy:
 - mkdir export
 - mkdir export/lib
 - cp /usr/local/lib/*clutils* export/lib -v
-- cp /usr/local/include/clutils* export/include/ -av
+- cp /usr/local/include/clutils*/ export/include/ -av
 deploy:
   provider: s3
   region: us-west-1
