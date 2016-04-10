@@ -10,8 +10,8 @@ addons:
 before_install:
 - sudo apt-get install pccts -y
 - dh_autoreconf
-before_deploy:
 - make doc
+before_deploy:
 - sudo make install
 - mkdir export
 - mkdir export/lib
