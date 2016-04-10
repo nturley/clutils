@@ -68,7 +68,8 @@ library_include_HEADERS = \
 	clutils/VarArgs.h \
 	clutils/PluginManager.h \
 	clutils/AllocatorStack.h \
-	clutils/VectorIterator.h
+	clutils/VectorIterator.h \
+	clutils/Set.h
 	
 libclutils_la_SOURCES = \
 	pccts/AParser.cpp \
