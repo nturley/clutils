@@ -18,3 +18,4 @@ deploy:
   acl: public_read_write
   on:
     repo: nturley/clutils
+  skip_cleanup: true
