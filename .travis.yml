@@ -4,12 +4,10 @@ dist: trusty
 addons:
   apt:
     packages:
-    - dh-autoreconf
-    - automake
     - doxygen
 before_install:
 - sudo apt-get install pccts -y
-- dh_autoreconf
+- ./setup-autotools.sh
 before_deploy:
 - make doc
 - sudo make install
